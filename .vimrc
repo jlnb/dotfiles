@@ -10,6 +10,18 @@
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
 
+if &compatible
+	set nocompatible
+end
+
+set encoding=utf-8
+"set noswapfile
+set splitright
+set splitbelow
+set number
+set ruler
+set laststatus=2
+
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -18,20 +30,12 @@ endif
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
 
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup		" keep a backup file (restore to previous version)
-  set backupdir=~/vimbackup/
-  if has('persistent_undo')
-    set undodir=~/vimundo/
-    set undofile	" keep an undo file (undo changes after closing)
-  endif
-endif
 
-if &t_Co > 2 || has("gui_running")
+
+if &t_Co > 2 || has("gui_running") && !exists("syntax_on")
   " Switch on highlighting the last used search pattern.
   set hlsearch
+  syntax on
 endif
 
 " Only do this part when compiled with support for autocommands.
@@ -52,17 +56,12 @@ else
 
 endif " has("autocmd")
 
-set number
-set ruler
 "filetype plugin on
 "filetype indent on
 "let g:tex_flavor='latex'
 "let g:Tex_MultipleCompileFormats = 'pdf'
 "let g:Tex_DefaultTargetFormat = 'pdf'
 "execute pathogen#infect()
-set encoding=utf-8
-set splitright
-set splitbelow
 
 " Add optional packages.
 "
@@ -73,3 +72,9 @@ set splitbelow
 if has('syntax') && has('eval')
   packadd! matchit
 endif
+
+" Possibility to add local configuration adjustments
+if filereadable($HOME . "/.vimrc.local")
+	source ~/.vimrc.local
+endif
+
