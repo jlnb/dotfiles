@@ -1,0 +1,7 @@
+Adjust .vimrc such that settings specific to this VM can be kept outside the
+.vimrc file
+
+> source command
+> source to specific destination where local adjustments should be stored
+> Incorporate information about usage in README.md
+> Useful at least for the location where backups should be stored
