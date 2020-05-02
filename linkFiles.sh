@@ -23,7 +23,7 @@ else
 		# zshrc already exists - lets back it up
 		mv $HOME/.zshrc $HOME/.zshrc.$(date +%Y)-$(date +%m)-$(date +%d).bckp
 	fi
-	ln -s .zshrc $HOME/.zshrc
+	ln -s $PWD/.zshrc $HOME/.zshrc
 
 	# Config file for bourne-again shell (bash)
 	if [ -e $HOME/.bashrc ];
@@ -31,7 +31,7 @@ else
 		# .bashrc already exists - lets back it up
 		mv $HOME/.bashrc $HOME/.bashrc.$(date +%Y)-$(date +%m)-$(date +%d).bckp
 	fi
-	ln -s .bashrc $HOME/.bashrc
+	ln -s $PWD/.bashrc $HOME/.bashrc
 
 	# Config file for git
 	if [ -e $HOME/.gitconfig ];
@@ -39,7 +39,7 @@ else
 		# .gitconfig already exists - lets back it up
 		mv $HOME/.gitconfig $HOME/.gitconfig.$(date +%Y)-$(date +%m)-$(date +%d).bckp
 	fi
-	ln -s .gitconfig $HOME/.gitconfig
+	ln -s $PWD/.gitconfig $HOME/.gitconfig
 
 	# Config for powerlevel10k theme for zsh
 	if [ -e $HOME/.p10k.zsh ];
@@ -47,7 +47,7 @@ else
 		# .p10k.zsh already exists - lets back it up
 		mv $HOME/.p10k.zsh $HOME/.p10k.zsh.$(date +%Y)-$(date +%m)-$(date +%d).bckp
 	fi
-	ln -s .p10k.zsh $HOME/.p10k.zsh
+	ln -s $PWD/.p10k.zsh $HOME/.p10k.zsh
 fi
 
 
