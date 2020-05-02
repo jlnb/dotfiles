@@ -5,6 +5,18 @@
 # to specify the variable.
 #
 
+# Function to safely, symbolically link files to the $HOME directory
+# *safely* means, that a backup copy is made in case the dotfile already exists
+safe_ln_file()
+{
+	if [ -e $HOME/$1 ];
+	then
+		# Backup dotfile if it already exists
+		mv $HOME/$1 $HOME/$1.$(date +%Y)-$(date +%m)-$(date +%d)T$(date +%H):$(date +%M).bckp
+	fi
+	ln -s $PWD/$1 $HOME/$1
+}
+
 if [ -z ${HOME+x} ]
 then
 	# HOME is not set
@@ -14,40 +26,15 @@ then
 else
 	# HOME is set
 	echo "A backup of existing dotfiles will be made in case there are any."
-	echo "The backup file will be named: <original dotfile name>.YYYY-MM-DD.bckp"
+	echo "The backup file will be named: <original dotfile name>.YYYY-MM-DDTHH:MM.bckp"
 	echo " "
 
-	# Config file for z shell (zsh)
-	if [ -e $HOME/.zshrc ]
-	then
-		# zshrc already exists - lets back it up
-		mv $HOME/.zshrc $HOME/.zshrc.$(date +%Y)-$(date +%m)-$(date +%d).bckp
-	fi
-	ln -s $PWD/.zshrc $HOME/.zshrc
-
-	# Config file for bourne-again shell (bash)
-	if [ -e $HOME/.bashrc ];
-	then
-		# .bashrc already exists - lets back it up
-		mv $HOME/.bashrc $HOME/.bashrc.$(date +%Y)-$(date +%m)-$(date +%d).bckp
-	fi
-	ln -s $PWD/.bashrc $HOME/.bashrc
-
-	# Config file for git
-	if [ -e $HOME/.gitconfig ];
-	then
-		# .gitconfig already exists - lets back it up
-		mv $HOME/.gitconfig $HOME/.gitconfig.$(date +%Y)-$(date +%m)-$(date +%d).bckp
-	fi
-	ln -s $PWD/.gitconfig $HOME/.gitconfig
-
-	# Config for powerlevel10k theme for zsh
-	if [ -e $HOME/.p10k.zsh ];
-	then
-		# .p10k.zsh already exists - lets back it up
-		mv $HOME/.p10k.zsh $HOME/.p10k.zsh.$(date +%Y)-$(date +%m)-$(date +%d).bckp
-	fi
-	ln -s $PWD/.p10k.zsh $HOME/.p10k.zsh
+	# Call safe_ln_file function for each dotfile
+	safe_ln_file .zshrc
+	safe_ln_file .bashrc
+	safe_ln_file .gitconfig
+	safe_ln_file .p10k.zsh
+	safe_ln_file .vimrc
 fi
 
 
