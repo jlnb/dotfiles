@@ -23,9 +23,26 @@ behavior.
 Even though points two and three are indicated as optional, it is recommended to
 install the font and use it in the terminal app.
 
+## Assumptions
+
+All dotfiles and extensions assume standard locations for directories and
+configuration files. Just right now it is not planned to consider any
+customizations to these standard paths and locations. 
+
+The standard path is: $HOME (not sure how this would work on / translate to a
+Windows or Mac system; I only tested things on Linux). The standard directories
+are listed below, together with software using it.
+
+| Software		| Standard directory for further configuration 	|
+|-----------------------|-----------------------------------------------|
+| oh-my-zsh 		| $HOME/.oh-my-zsh 				|
+| vim 			| $HOME/.vim 					|
+
+The content of these directories is (so far) not part of the dotfiles contained
+in this repository.
+
 ## Open tasks
 
-* Add my .vimrc file
 * Add possibility to incorporporate local adjustments to configurations without
   touching / changing the files in this repository
 
