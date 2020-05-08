@@ -245,9 +245,23 @@ if has('syntax') && has('eval')
   packadd! matchit
 endif
 
-" My keymappings
-map - ddp
-map _ ddkkp
+" Setting my leader and local leader key
+let mapleader = "-"
+let maplocalleader = "ö"
+
+" My keymappings - Normal mode
+nnoremap <leader>- ddp
+nnoremap <leader>_ ddkkp
+nnoremap <leader>u viwUe
+nnoremap <leader>ev :split $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" My keymappings - Insert mode
+inoremap <leader>u <esc>viwUea
+inoremap <leader>l -------------------------------------------------------------------------------<cr>
+
+" My keymappings - Visual mode
+
 
 " Possibility to add local configuration adjustments
 if filereadable($HOME . "/.vimrc.local")
