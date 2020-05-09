@@ -38,6 +38,8 @@ if isdirectory($HOME . "/.vim/bundle/Vundle.vim")
 	" plugin on GitHub repo
 	" Plugin 'tpope/vim-fugitive'
 	Plugin 'preservim/nerdtree'
+	Plugin 'vim-airline/vim-airline'
+	Plugin 'vim-airline/vim-airline-themes'	
 	" plugin from http://vim-scripts.org/vim/scripts.html
 	" Plugin 'L9'
 	" Git plugin not hosted on GitHub
@@ -65,6 +67,9 @@ if isdirectory($HOME . "/.vim/bundle/Vundle.vim")
 	"
 	" see :h vundle for more details or wiki for FAQ
 	" Put your non-Plugin stuff after this line
+	
+	" Plugin specific options
+	let g:airline#extensions#tabline#enabled = 1
 endif
 
 set encoding=utf-8
@@ -74,6 +79,12 @@ set splitbelow
 set number
 set ruler
 set laststatus=2
+set softtabstop=4
+set shiftwidth=4
+set tabstop=8
+set noexpandtab
+set shiftround
+set wrap
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -95,7 +106,7 @@ silent! endwhile
 set backspace=indent,eol,start
 
 set history=200		" keep 200 lines of command line history
-" set ruler		" show the cursor position all the time
+set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set wildmenu		" display completion matches in a status line
 
@@ -233,6 +244,52 @@ endif " has("autocmd")
 if has('syntax') && has('eval')
   packadd! matchit
 endif
+
+" Setting my leader and local leader key
+let mapleader = "-"
+let maplocalleader = "ö"
+
+" My keymappings - Normal mode
+nnoremap <leader>- ddp
+nnoremap <leader>_ ddkkp
+nnoremap <leader>U viwUe
+nnoremap <leader>u viwue
+nnoremap <leader>ev :split $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+
+" My keymappings - Insert mode
+inoremap <leader>u <esc>viwUea
+inoremap <leader>l -------------------------------------------------------------------------------<cr>
+inoremap :w <esc>:w<cr>a
+inoremap l" \glqq{}
+inoremap r" \grqq{}
+inoremap jk <esc>
+
+" My keymappings - Visual mode
+vnoremap <leader>" di""<esc>hpl
+vnoremap <leader>l" di\glqq{}<esc>pa\grqq{}<esc>
+
+" Abbreviations - insert mode
+" Typos
+iabbrev adn and
+iabbrev waht what
+" Shortcuts
+iabbrev @@ mail@julianbelz.com
+iabbrev ccopy Copyright 2020 Julian Belz, all rights reserved.
+
+iabbrev aalpha \alpha
+iabbrev bbeta \beta
+iabbrev ggamma \gamma
+iabbrev ddelta \delta
+iabbrev mmu \mu
+
+iabbrev Aalpha \Alpha
+iabbrev Bbeta \Beta
+iabbrev Ggamma \Gamma
+iabbrev Ddelta \Delta
+
 
 " Possibility to add local configuration adjustments
 if filereadable($HOME . "/.vimrc.local")
