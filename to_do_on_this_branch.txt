@@ -3,5 +3,15 @@ Adjust .vimrc such that settings specific to this VM can be kept outside the
 
 > source command
 > source to specific destination where local adjustments should be stored
-> Incorporate information about usage in README.md
+x Incorporate information about usage in README.md
 > Useful at least for the location where backups should be stored
+
+Create shell script for installing
+
+* zsh
+* oh-my-zsh
+* powerlevel10k
+* vifm
+
+for linux systems using pacman or apt for package administration.
+Additionally, the script should create the folder $HOME/.vifm. 
