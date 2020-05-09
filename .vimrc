@@ -252,16 +252,24 @@ let maplocalleader = "ö"
 " My keymappings - Normal mode
 nnoremap <leader>- ddp
 nnoremap <leader>_ ddkkp
-nnoremap <leader>u viwUe
+nnoremap <leader>U viwUe
+nnoremap <leader>u viwue
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 
 " My keymappings - Insert mode
 inoremap <leader>u <esc>viwUea
 inoremap <leader>l -------------------------------------------------------------------------------<cr>
 inoremap :w <esc>:w<cr>a
+inoremap l" \glqq{}
+inoremap r" \grqq{}
+inoremap jk <esc>
 
 " My keymappings - Visual mode
+vnoremap <leader>" di""<esc>hpl
+vnoremap <leader>l" di\glqq{}<esc>pa\grqq{}<esc>
 
 " Abbreviations - insert mode
 " Typos
@@ -270,6 +278,18 @@ iabbrev waht what
 " Shortcuts
 iabbrev @@ mail@julianbelz.com
 iabbrev ccopy Copyright 2020 Julian Belz, all rights reserved.
+
+iabbrev aalpha \alpha
+iabbrev bbeta \beta
+iabbrev ggamma \gamma
+iabbrev ddelta \delta
+iabbrev mmu \mu
+
+iabbrev Aalpha \Alpha
+iabbrev Bbeta \Beta
+iabbrev Ggamma \Gamma
+iabbrev Ddelta \Delta
+
 
 " Possibility to add local configuration adjustments
 if filereadable($HOME . "/.vimrc.local")
