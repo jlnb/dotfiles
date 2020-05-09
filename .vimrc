@@ -259,9 +259,17 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " My keymappings - Insert mode
 inoremap <leader>u <esc>viwUea
 inoremap <leader>l -------------------------------------------------------------------------------<cr>
+inoremap :w <esc>:w<cr>a
 
 " My keymappings - Visual mode
 
+" Abbreviations - insert mode
+" Typos
+iabbrev adn and
+iabbrev waht what
+" Shortcuts
+iabbrev @@ mail@julianbelz.com
+iabbrev ccopy Copyright 2020 Julian Belz, all rights reserved.
 
 " Possibility to add local configuration adjustments
 if filereadable($HOME . "/.vimrc.local")
