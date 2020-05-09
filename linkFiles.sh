@@ -9,12 +9,20 @@
 # *safely* means, that a backup copy is made in case the dotfile already exists
 safe_ln_file()
 {
-	if [ -e $HOME/$1 ];
+	# Set the target directory to the home directory as default
+	# (where the link is created)
+	TARGETDIR=$HOME
+	if [ $# -gt 1 ];
+	then
+		TARGETDIR=$2
+	fi
+
+	if [ -e $TARGETDIR/$1 ];
 	then
 		# Backup dotfile if it already exists
-		mv $HOME/$1 $HOME/$1.$(date +%Y)-$(date +%m)-$(date +%d)T$(date +%H):$(date +%M).bckp
+		mv $TARGETDIR/$1 $TARGETDIR/$1.$(date +%Y)-$(date +%m)-$(date +%d)T$(date +%H):$(date +%M).bckp
 	fi
-	ln -s $PWD/$1 $HOME/$1
+	ln -s $PWD/$1 $TARGETDIR/$1
 }
 
 if [ -z ${HOME+x} ]
@@ -30,11 +38,13 @@ else
 	echo " "
 
 	# Call safe_ln_file function for each dotfile
-	safe_ln_file .zshrc
 	safe_ln_file .bashrc
 	safe_ln_file .gitconfig
 	safe_ln_file .p10k.zsh
 	safe_ln_file .vimrc
+	safe_ln_file .zshrc
+	safe_ln_file vifmrc "$HOME/.vifm"
+
 fi
 
 
