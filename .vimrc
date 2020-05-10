@@ -284,12 +284,13 @@ iabbrev bbeta \beta
 iabbrev ggamma \gamma
 iabbrev ddelta \delta
 iabbrev mmu \mu
+iabbrev rrho \rho
 
 iabbrev Aalpha \Alpha
 iabbrev Bbeta \Beta
 iabbrev Ggamma \Gamma
 iabbrev Ddelta \Delta
-iabbrev Rrho \rho
+iabbrev Rrho \Rho
 
 
 " Possibility to add local configuration adjustments
