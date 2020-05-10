@@ -289,6 +289,7 @@ iabbrev Aalpha \Alpha
 iabbrev Bbeta \Beta
 iabbrev Ggamma \Gamma
 iabbrev Ddelta \Delta
+iabbrev Rrho \rho
 
 
 " Possibility to add local configuration adjustments
