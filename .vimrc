@@ -292,7 +292,7 @@ iabbrev Ddelta \Delta
 
 
 " Possibility to add local configuration adjustments
-if filereadable($HOME . "/.vimrc.local")
-	source ~/.vimrc.local
+if filereadable($HOME . "/.vim/.vimrc.local")
+	source ~/.vim/.vimrc.local
 endif
 
