@@ -41,6 +41,8 @@ if isdirectory($HOME . "/.vim/bundle/Vundle.vim")
 	Plugin 'vim-airline/vim-airline'
 	Plugin 'vim-airline/vim-airline-themes'	
 	Plugin 'lervag/vimtex'
+	Plugin 'SirVer/ultisnips'
+	Plugin 'honza/vim-snippets'
 	" plugin from http://vim-scripts.org/vim/scripts.html
 	" Plugin 'L9'
 	" Git plugin not hosted on GitHub
@@ -74,6 +76,17 @@ if isdirectory($HOME . "/.vim/bundle/Vundle.vim")
 	" let g:vimtex_view_general_viewer = 'zathura' > move to local vimrc
 	" (not installed on all my machines)
 	let g:vimtex_imaps_leader = 'ä'
+
+	" let g:UltiSnipsExpandTrigger="<tab>"
+	let g:UltiSnipsJumpForwardTrigger="<c-j>"
+	let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+	
+	" If you want :UltiSnipsEdit to split your window.
+	let g:UltiSnipsEditSplit="vertical"
+
+	autocmd Filetype tex UltiSnipsAddFiletypes texmath 
+	autocmd Filetype tex UltiSnipsAddFiletypes tex 
+
 endif
 
 set encoding=utf-8
