@@ -40,6 +40,7 @@ if isdirectory($HOME . "/.vim/bundle/Vundle.vim")
 	Plugin 'preservim/nerdtree'
 	Plugin 'vim-airline/vim-airline'
 	Plugin 'vim-airline/vim-airline-themes'	
+	Plugin 'lervag/vimtex'
 	" plugin from http://vim-scripts.org/vim/scripts.html
 	" Plugin 'L9'
 	" Git plugin not hosted on GitHub
@@ -70,6 +71,9 @@ if isdirectory($HOME . "/.vim/bundle/Vundle.vim")
 	
 	" Plugin specific options
 	let g:airline#extensions#tabline#enabled = 1
+	" let g:vimtex_view_general_viewer = 'zathura' > move to local vimrc
+	" (not installed on all my machines)
+	let g:vimtex_imaps_leader = 'ä'
 endif
 
 set encoding=utf-8
@@ -231,7 +235,7 @@ else
 
 endif " has("autocmd")
 
-"let g:tex_flavor='latex'
+let g:tex_flavor='latex'
 "let g:Tex_MultipleCompileFormats = 'pdf'
 "let g:Tex_DefaultTargetFormat = 'pdf'
 
