@@ -247,7 +247,9 @@ endif
 
 " Setting my leader and local leader key
 let mapleader = "-"
+nnoremap - <nop>
 let maplocalleader = "ö"
+nnoremap ö <nop>
 
 " My keymappings - Normal mode
 nnoremap <leader>- ddp
@@ -291,6 +293,12 @@ iabbrev Bbeta \Beta
 iabbrev Ggamma \Gamma
 iabbrev Ddelta \Delta
 iabbrev Rrho \Rho
+
+" autocmd section
+autocmd FileType python nnoremap <buffer> <localleader>c I#<space><esc>
+autocmd Filetype matlab nnoremap <buffer> <localleader>c I%<space><esc>
+autocmd Filetype markdown nnoremap <buffer> <localleader>c I%<space><esc>
+autocmd Filetype vim nnoremap <buffer> <localleader>c I"<space><esc>
 
 
 " Possibility to add local configuration adjustments
