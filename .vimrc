@@ -73,7 +73,7 @@ if isdirectory($HOME . "/.vim/bundle/Vundle.vim")
 endif
 
 set encoding=utf-8
-"set noswapfile
+set noswapfile
 set splitright
 set splitbelow
 set number
