@@ -278,12 +278,15 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+map <C-h> <C-w>h
+
 " My keymappings - Insert mode
 inoremap <leader>u <esc>viwUea
 inoremap <leader>l -------------------------------------------------------------------------------<cr>
 inoremap :w <esc>:w<cr>a
-inoremap l" \glqq{}
-inoremap r" \grqq{}
 inoremap jk <esc>
 
 " My keymappings - Visual mode
@@ -298,25 +301,32 @@ iabbrev waht what
 iabbrev @@ mail@julianbelz.com
 iabbrev ccopy Copyright 2020 Julian Belz, all rights reserved.
 
-iabbrev aalpha \alpha
-iabbrev bbeta \beta
-iabbrev ggamma \gamma
-iabbrev ddelta \delta
-iabbrev mmu \mu
-iabbrev rrho \rho
-
-iabbrev Aalpha \Alpha
-iabbrev Bbeta \Beta
-iabbrev Ggamma \Gamma
-iabbrev Ddelta \Delta
-iabbrev Rrho \Rho
 
 " autocmd section
 autocmd FileType python nnoremap <buffer> <localleader>c I#<space><esc>
+autocmd Filetype python :iabbrev <buffer> iff if:<left>
+
 autocmd Filetype matlab nnoremap <buffer> <localleader>c I%<space><esc>
+
 autocmd Filetype markdown nnoremap <buffer> <localleader>c I%<space><esc>
+
 autocmd Filetype vim nnoremap <buffer> <localleader>c I"<space><esc>
 
+autocmd Filetype tex nnoremap <buffer> <localleader>c I%<space><esc>
+autocmd Filetype tex :inoremap <buffer> l"" \glqq{}
+autocmd Filetype tex :inoremap <buffer> r"" \grqq{}
+
+autocmd Filetype tex :iabbrev <buffer> aalpha \alpha
+autocmd Filetype tex :iabbrev <buffer> bbeta \beta
+autocmd Filetype tex :iabbrev <buffer> ggamma \gamma
+autocmd Filetype tex :iabbrev <buffer> ddelta \delta
+autocmd Filetype tex :iabbrev <buffer> mmu \mu
+autocmd Filetype tex :iabbrev <buffer> rrho \rho
+autocmd Filetype tex :iabbrev <buffer> Aalpha \Alpha
+autocmd Filetype tex :iabbrev <buffer> Bbeta \Beta
+autocmd Filetype tex :iabbrev <buffer> Ggamma \Gamma
+autocmd Filetype tex :iabbrev <buffer> Ddelta \Delta
+autocmd Filetype tex :iabbrev <buffer> Rrho \Rho
 
 " Possibility to add local configuration adjustments
 if filereadable($HOME . "/.vim/.vimrc.local")
