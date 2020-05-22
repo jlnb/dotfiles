@@ -84,8 +84,11 @@ if isdirectory($HOME . "/.vim/bundle/Vundle.vim")
 	" If you want :UltiSnipsEdit to split your window.
 	let g:UltiSnipsEditSplit="vertical"
 
-	autocmd Filetype tex UltiSnipsAddFiletypes texmath 
-	autocmd Filetype tex UltiSnipsAddFiletypes tex 
+	augroup ultisnips
+	    au!
+	    autocmd Filetype tex UltiSnipsAddFiletypes texmath 
+	    autocmd Filetype tex UltiSnipsAddFiletypes tex 
+	augroup END
 
 endif
 
@@ -303,30 +306,52 @@ iabbrev ccopy Copyright 2020 Julian Belz, all rights reserved.
 
 
 " autocmd section
-autocmd FileType python nnoremap <buffer> <localleader>c I#<space><esc>
-autocmd Filetype python :iabbrev <buffer> iff if:<left>
+augroup filetype_python
+    au!
+    autocmd FileType python nnoremap <buffer> <localleader>c I#<space><esc>
+    autocmd Filetype python :iabbrev <buffer> iff if:<left>
+augroup END
 
-autocmd Filetype matlab nnoremap <buffer> <localleader>c I%<space><esc>
+augroup filetype_matlab
+    au!
+    autocmd Filetype matlab nnoremap <buffer> <localleader>c I%<space><esc>
+augroup END
 
-autocmd Filetype markdown nnoremap <buffer> <localleader>c I%<space><esc>
+augroup filetype_markdown
+    au!
+    autocmd Filetype markdown nnoremap <buffer> <localleader>c I%<space><esc>
+augroup END
 
-autocmd Filetype vim nnoremap <buffer> <localleader>c I"<space><esc>
+augroup filetype_vim
+    au!
+    autocmd Filetype vim nnoremap <buffer> <localleader>c I"<space><esc>
+augroup END
 
-autocmd Filetype tex nnoremap <buffer> <localleader>c I%<space><esc>
-autocmd Filetype tex :inoremap <buffer> l"" \glqq{}
-autocmd Filetype tex :inoremap <buffer> r"" \grqq{}
 
-autocmd Filetype tex :iabbrev <buffer> aalpha \alpha
-autocmd Filetype tex :iabbrev <buffer> bbeta \beta
-autocmd Filetype tex :iabbrev <buffer> ggamma \gamma
-autocmd Filetype tex :iabbrev <buffer> ddelta \delta
-autocmd Filetype tex :iabbrev <buffer> mmu \mu
-autocmd Filetype tex :iabbrev <buffer> rrho \rho
-autocmd Filetype tex :iabbrev <buffer> Aalpha \Alpha
-autocmd Filetype tex :iabbrev <buffer> Bbeta \Beta
-autocmd Filetype tex :iabbrev <buffer> Ggamma \Gamma
-autocmd Filetype tex :iabbrev <buffer> Ddelta \Delta
-autocmd Filetype tex :iabbrev <buffer> Rrho \Rho
+augroup filetype_tex
+    au!
+
+    autocmd Filetype tex nnoremap <buffer> <localleader>c I%<space><esc>
+    autocmd Filetype tex :inoremap <buffer> l"" \glqq{}
+    autocmd Filetype tex :inoremap <buffer> r"" \grqq{}
+
+    autocmd Filetype tex :iabbrev <buffer> aalpha \alpha
+    autocmd Filetype tex :iabbrev <buffer> bbeta \beta
+    autocmd Filetype tex :iabbrev <buffer> ggamma \gamma
+    autocmd Filetype tex :iabbrev <buffer> ddelta \delta
+    autocmd Filetype tex :iabbrev <buffer> mmu \mu
+    autocmd Filetype tex :iabbrev <buffer> rrho \rho
+    autocmd Filetype tex :iabbrev <buffer> Aalpha \Alpha
+    autocmd Filetype tex :iabbrev <buffer> Bbeta \Beta
+    autocmd Filetype tex :iabbrev <buffer> Ggamma \Gamma
+    autocmd Filetype tex :iabbrev <buffer> Ddelta \Delta
+    autocmd Filetype tex :iabbrev <buffer> Rrho \Rho
+augroup END
+
+augroup filetype_html
+    au!
+    autocmd Filetype html nnoremap <buffer> <localleader>f Vatzf
+augroup END
 
 " Possibility to add local configuration adjustments
 if filereadable($HOME . "/.vim/.vimrc.local")
