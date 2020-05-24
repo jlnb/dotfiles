@@ -43,6 +43,7 @@ if isdirectory($HOME . "/.vim/bundle/Vundle.vim")
 	Plugin 'lervag/vimtex'
 	Plugin 'SirVer/ultisnips'
 	Plugin 'honza/vim-snippets'
+	Plugin 'ludovicchabant/vim-gutentags'
 	" plugin from http://vim-scripts.org/vim/scripts.html
 	" Plugin 'L9'
 	" Git plugin not hosted on GitHub
