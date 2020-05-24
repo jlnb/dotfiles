@@ -80,7 +80,8 @@ if isdirectory($HOME . "/.vim/bundle/Vundle.vim")
 	" let g:UltiSnipsExpandTrigger="<tab>"
 	let g:UltiSnipsJumpForwardTrigger="<c-j>"
 	let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-	
+	let g:UltiSnipsListSnippets="<F2>"
+
 	" If you want :UltiSnipsEdit to split your window.
 	let g:UltiSnipsEditSplit="vertical"
 
