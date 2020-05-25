@@ -307,6 +307,15 @@ iabbrev waht what
 iabbrev @@ mail@julianbelz.com
 iabbrev ccopy Copyright 2020 Julian Belz, all rights reserved.
 
+" Operator-pending commands
+onoremap in( :<c-u>normal! f(vi(<cr>
+onoremap il( :<c-u>normal! F)vi(<cr>
+onoremap in[ :<c-u>normal! f[vi[<cr>
+onoremap il[ :<c-u>normal! F]vi[<cr>
+onoremap in{ :<c-u>normal! f{vi{<cr>
+onoremap il{ :<c-u>normal! F}vi{<cr>
+onoremap il" :<c-u>normal! F"vi"<cr>
+onoremap in" :<c-u>normal! f"vi"<cr>
 
 " autocmd section
 augroup filetype_python
