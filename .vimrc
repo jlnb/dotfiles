@@ -269,7 +269,7 @@ if has('syntax') && has('eval')
 endif
 
 " Setting my leader and local leader key
-let mapleader = "-"
+let mapleader = "_"
 nnoremap - <nop>
 let maplocalleader = "ö"
 nnoremap ö <nop>
@@ -358,6 +358,7 @@ augroup filetype_tex
     autocmd Filetype tex :iabbrev <buffer> Ggamma \Gamma
     autocmd Filetype tex :iabbrev <buffer> Ddelta \Delta
     autocmd Filetype tex :iabbrev <buffer> Rrho \Rho
+
 augroup END
 
 augroup filetype_html
