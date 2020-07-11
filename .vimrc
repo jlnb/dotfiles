@@ -303,6 +303,7 @@ vnoremap <leader>l" di\glqq{}<esc>pa\grqq{}<esc>
 " Typos
 iabbrev adn and
 iabbrev waht what
+
 " Shortcuts
 iabbrev @@ mail@julianbelz.com
 iabbrev ccopy Copyright 2020 Julian Belz, all rights reserved.
