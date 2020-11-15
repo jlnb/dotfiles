@@ -60,12 +60,7 @@ settings should of course be adjusted for each machine individually, since
 folder structures and available pdf viewer may vary from machine to machine.
 
 If you place a file with name '.vimrc.local' in the ~/.vim folder it is
-automatically loaded after all other settings are made in the '.vimrc' file:
-
-> " Possibility to add local configuration adjustments
-> if filereadable($HOME . "/.vim/.vimrc.local")
->	source ~/.vim/.vimrc.local
-> endif
+automatically loaded after all other settings are made, see the '.vimrc' file.
 
 Note: The '.vimrc.local' file is not placed anywhere automatically. It only
 serves as example.
