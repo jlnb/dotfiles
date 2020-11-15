@@ -13,8 +13,8 @@ behavior.
 * Install fonts located in the fonts folder (optional)
 * Make sure the terminal uses these fonts (optional)
 * Make sure **zsh** is installed
-* Make sure **oh-my-zsh** is installed
-* Make sure **powerlevel10k** theme is available
+* Make sure **oh-my-zsh** is installed (<https://www.github.com/ohmyzsh/ohmyzsh>)
+* Make sure **powerlevel10k** theme is available (<https://www.github.com/romkatv/powerlevel10k>)
 * Create symbolic links from the dotfiles in this repository to the correct
   places on the machine. You can use the shell script "linkFiles.sh" for this
   task. It will backup possibly already existing dotfiles and create symbolic
@@ -22,6 +22,15 @@ behavior.
 
 Even though points two and three are indicated as optional, it is recommended to
 install the font and use it in the terminal app.
+
+### Further Steps...
+
+In order to get everything functioning as intended, install the Vim bundle
+plugin manager (<https://www.github.com/VundleVim/Vundle.vim>) and clone
+the 'UltiSnips' repository (<https://www.github.com/jlnb/UltiSnips>) to
+~/.vim. After that open vim and run ':PluginInstall'.
+
+Note: As UltiSnips relies on python, vim has to be compiled accordingly.
 
 ## Assumptions
 
@@ -41,10 +50,25 @@ are listed below, together with software using it.
 The content of these directories is (so far) not part of the dotfiles contained
 in this repository.
 
-## Open tasks
+## Individual Local Settings
 
-* Add possibility to incorporporate local adjustments to configurations without
-  touching / changing the files in this repository
+Currently, there is the possibility to have a local settings file for vim which
+may contain settings that are only suited for a specific computer. For an example
+have a look at the '.vimrc.local' file. Therein are settings where to place
+backup and undo files as well as which pdf viewer to use for vimtex. These
+settings should of course be adjusted for each machine individually, since
+folder structures and available pdf viewer may vary from machine to machine.
+
+If you place a file with name '.vimrc.local' in the ~/.vim folder it is
+automatically loaded after all other settings are made in the '.vimrc' file:
+
+> " Possibility to add local configuration adjustments
+> if filereadable($HOME . "/.vim/.vimrc.local")
+>	source ~/.vim/.vimrc.local
+> endif
+
+Note: The '.vimrc.local' file is not placed anywhere automatically. It only
+serves as example.
 
 ## Adding additional configuration files
 

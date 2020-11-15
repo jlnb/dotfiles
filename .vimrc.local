@@ -14,5 +14,7 @@ else
   endif
 endif
 
+let g:vimtex_view_general_viewer = 'zathura'
+
 " Location of files for spell checking
 " <not yet implemented>
