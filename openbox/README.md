@@ -1,6 +1,7 @@
-%% Short description of customizations
-%  Julian Belz
-%  2021-01-01
+# Short description of customizations
+
+Author: Julian Belz
+Date: 2021-01-01
 
 * Shortcuts to place windows added
     * A-<k>, <k> beeing q, w, e, a, s, d, y, x, c
