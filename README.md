@@ -13,6 +13,7 @@ Currently, dotfiles are included for the following applications:
 * git
 * openbox
 * powerlevel10k (a theme for zsh)
+* terminator (terminal)
 * vifm
 * vim
 * zsh
