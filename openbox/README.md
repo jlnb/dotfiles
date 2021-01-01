@@ -1,6 +1,6 @@
 # Short description of customizations
 
-Author: Julian Belz
+Author: Julian Belz<br/>
 Date: 2021-01-01
 
 * Shortcuts to place windows added
