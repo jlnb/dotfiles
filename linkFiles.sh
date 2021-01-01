@@ -46,6 +46,7 @@ else
 	safe_ln_file .zshrc
 	safe_ln_file vifmrc "$HOME/.vifm"
 	safe_ln_file openbox/rc.xml "$HOME/.config/openbox"
+	safe_ln_file terminator/config "$HOME/.config/terminator"
 
 fi
 
