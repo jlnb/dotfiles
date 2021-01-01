@@ -14,6 +14,7 @@ safe_ln_file()
 	TARGETDIR=$HOME
 	if [ $# -gt 1 ];
 	then
+	    # if number of input arguments is greater than 1, an other target directory has been passed
 		TARGETDIR=$2
 	fi
 
@@ -44,6 +45,7 @@ else
 	safe_ln_file .vimrc
 	safe_ln_file .zshrc
 	safe_ln_file vifmrc "$HOME/.vifm"
+	safe_ln_file openbox/rc.xml "$HOME/.config/openbox"
 
 fi
 

@@ -7,6 +7,17 @@ I like to play around with virtual machines and I want to keep my settings on
 all virtual machines in sync such that vim, bash (or zsh) have the same look /
 behavior.
 
+Currently, dotfiles are included for the following applications:
+
+* bash (probably not much customization since I am using zsh most of the time)
+* git
+* openbox
+* powerlevel10k (a theme for zsh)
+* vifm
+* vim
+* zsh
+
+
 ## To-do on new machines
 
 * Clone this repository
