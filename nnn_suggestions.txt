@@ -1,0 +1,19 @@
+%% nnn plugin system
+
+
+Useful / reasonable programs to install to work with nnn plugins:
+
+* bat
+* tree
+* catimg
+* sxiv
+* fzf
+
+Go to the nnn plugin folder, show hidden files, open .nnn-plugin-helper and set the
+variable
+
+CUR_CTX=1
+
+Prevents nnn to ask for a context in which to open a directory...
+
+
