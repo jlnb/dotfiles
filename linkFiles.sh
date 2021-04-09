@@ -47,6 +47,8 @@ else
 	safe_ln_file vifmrc "$HOME/.vifm"
 	safe_ln_file openbox/rc.xml "$HOME/.config"
 	safe_ln_file terminator/config "$HOME/.config"
+	# The following operations are not tested yet
+	safe_ln_file nnnrc "$HOME/.config/nnn"
 
 fi
 

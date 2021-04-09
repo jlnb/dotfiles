@@ -97,9 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # nnn configuration
-export NNN_FIFO=/tmp/nnn.fifo
-export NNN_BMS='d:~/DatenKarl/Dokumente;D:~/Downloads'
-export NNN_PLUG='p:preview-tui;i:imgview;c:fzcd'
+source $HOME/.config/nnn/nnnrc
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
