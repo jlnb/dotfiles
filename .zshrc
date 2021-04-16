@@ -110,3 +110,15 @@ source $HOME/.config/nnn/nnnrc
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# fzf settings
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
+bindkey -r '^T'
+bindkey '^F' fzf-file-widget
+
+bindkey -r '\ec'
+bindkey '\ef' fzf-cd-widget
+
+eval "$(jump shell zsh)"
