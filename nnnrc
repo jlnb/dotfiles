@@ -2,10 +2,10 @@
 
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_BMS='d:~/Dokumente;D:~/Downloads'
-export NNN_PLUG='p:preview-tui;i:imgview;c:fzcd'
+export NNN_PLUG='p:preview-tabbed;c:fzcd;j:autojump;d:diffs;e:thunderbird_mail_attachment'
 export VISUAL=vim
 
-alias nnn "nnn -e"
-alies ls "nnn -e"
+alias nnn="nnn -de"
+#alias ls= "nnn -de"
 
 
