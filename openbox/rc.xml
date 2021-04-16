@@ -292,11 +292,13 @@
         <command>rofi_run -r</command>
       </action>
     </keybind>
+    <!--
     <keybind key="C-space">
       <action name="Execute">
         <command>rofi_run -r</command>
       </action>
     </keybind>
+    -->
     <keybind key="W-x">
       <action name="Execute">
         <command>rofi_run -l</command>
