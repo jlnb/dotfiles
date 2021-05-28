@@ -97,7 +97,9 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # nnn configuration
-source $HOME/.config/nnn/nnnrc
+if [[ -f $HOME/.config/nnn/nnnrc ]]; then
+    source $HOME/.config/nnn/nnnrc
+fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
