@@ -18,6 +18,11 @@ Currently, dotfiles are included for the following applications:
 * vim
 * zsh
 
+Recently, I started to test neovim in a virtual machine. At the moment is
+unclear if I'll prefer neovim over vim. Therefore, the respective dotfile is
+added to this repository without altering the linkFiles.sh script or anything
+else.
+
 
 ## To-do on new machines
 
