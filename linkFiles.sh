@@ -38,20 +38,34 @@ else
 	echo "The backup file will be named: <original dotfile name>.YYYY-MM-DDTHH:MM.bckp"
 	echo " "
 
+	# The following, uncommented code was used until about 2022-12. Then I
+	# switched to Mabox, using nvim, bash and there is no more need to
+	# alter the openpox configuration from the default settings. Therefore,
+	# the linking process changed...
+	#
 	# Call safe_ln_file function for each dotfile
+	# safe_ln_file .bashrc
+	# safe_ln_file .gitconfig
+	# safe_ln_file .p10k.zsh
+	# safe_ln_file .vimrc
+	# safe_ln_file .zshrc
+	# safe_ln_file vifmrc "$HOME/.vifm"
+	# safe_ln_file openbox/rc.xml "$HOME/.config"
+	# safe_ln_file terminator/config "$HOME/.config"
+	# # The following operations are not tested yet
+	# safe_ln_file nnnrc "$HOME/.config/nnn"
+	
+	# Used from 2023-02-05 on...
+	# * No more customizations to bash
+	# * zsh is no longer used
+	# * vifm no longer used
+	# * no more openbox customizations
+	# * no more terminator customizations
+	# * 
 	safe_ln_file .bashrc
-	safe_ln_file .gitconfig
-	safe_ln_file .p10k.zsh
-	safe_ln_file .vimrc
-	safe_ln_file .zshrc
-	safe_ln_file vifmrc "$HOME/.vifm"
-	safe_ln_file openbox/rc.xml "$HOME/.config"
-	safe_ln_file terminator/config "$HOME/.config"
-	# The following operations are not tested yet
 	safe_ln_file nnnrc "$HOME/.config/nnn"
+	safe_ln_file  nvim/init.lua "$HOME/.config"
 
 fi
-
-
 
 
