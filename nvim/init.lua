@@ -56,6 +56,10 @@ require('packer').startup(function(use)
   use 'SirVer/ultisnips'
   use 'honza/vim-snippets'
 
+  -- Unicode support 
+  use 'chrisbra/unicode.vim'
+
+
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
 
