@@ -1,3 +1,5 @@
 [user]
 	email = github@julianbelz.com
 	name = jlnb
+[credential "https://github.com/jlnb"]
+	provider = github
