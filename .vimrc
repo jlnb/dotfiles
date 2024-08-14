@@ -44,6 +44,7 @@ if isdirectory($HOME . "/.vim/bundle/Vundle.vim")
 	Plugin 'SirVer/ultisnips'
 	Plugin 'honza/vim-snippets'
 	Plugin 'ludovicchabant/vim-gutentags'
+	Plugin 'ziglang/zig.vim'
 	" plugin from http://vim-scripts.org/vim/scripts.html
 	" Plugin 'L9'
 	" Git plugin not hosted on GitHub
@@ -309,9 +310,8 @@ iabbrev @@ mail@julianbelz.com
 iabbrev ccopy Copyright 2020 Julian Belz, all rights reserved.
 
 " Permanent macros
-let @n = '0i| :s/\[/(/g:s/\].*/) \| /g:set textwidth=0jdd:.,/^----------/-1 global/^/normal A<br>?^|j:.-1,/^----------/-1 s/\n//gd$A |?<br>df>:.+1,/^\d\d\d/-1 d'
+let @n = '0i|:s/\[/(/g:s/\].*/) \| /g:set textwidth=0jdd:.,/^----------/-1 global/^/normal A<br>?^|j:.-1,/^----------/-1 s/\n//gd$A |?<br>df>:.+1,/^\d\d\d/-1 d'
 let @h = ':g/#\a/ v/\\#/ s/#/\\#/g'
-
 
 " Operator-pending commands
 onoremap in( :<c-u>normal! f(vi(<cr>
