@@ -1,0 +1,41 @@
+" Local settings for vim
+" Julian Belz
+" 2020-05-10
+
+" Location for backup and undo files
+if has("vms")
+  set nobackup		" do not keep a backup file, use versions instead
+else
+  " set backupdir=C:\Daten\Dokumente\vimbackup
+  set backupdir=C:\Users\zleb\Documents\vimbackup
+  set backup		" keep a backup file (restore to previous version)
+  if has('persistent_undo')
+    " set undodir=C:\Daten\Dokumente\vimundo
+    set undodir=C:\Users\zleb\Documents\vimundo
+    set undofile	" keep an undo file (undo changes after closing)
+  endif
+endif
+
+let g:vimtex_view_general_viewer = 'SumatraPDF'
+let g:vimtex_view_general_options='-reuse-instance -forward-search @tex @line @pdf'
+let g:vimtex_view_general_options_latexmk='-reuse-instance'
+
+let g:vimtex_compiler_latexmk = {
+        \ 'backend' : 'process',
+        \ 'background' : 1,
+        \ 'build_dir' : '',
+        \ 'callback' : 1,
+        \ 'continuous' : 1,
+        \ 'executable' : 'latexmk',
+        \ 'hooks' : [],
+        \ 'options' : [
+        \   '-verbose',
+        \   '-file-line-error',
+        \   '-synctex=1',
+        \   '-interaction=nonstopmode',
+        \   '-shell-escape',
+        \ ],
+        \}
+
+" Location of files for spell checking
+" <not yet implemented>
